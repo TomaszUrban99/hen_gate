@@ -1,0 +1,39 @@
+% Thermal calculations for MOSFET's
+% Based on AN5483 application guide by ST
+% Calculation for INFINEON IRF1405PbF Mosfet transistor
+
+% 
+I_load = 4;
+Vs = 26;
+t_rise = 13 * 10^(-9) + 190 * 10^(-9); % Rise time during switch
+t_fall = 130 * 10^(-9) + 110 * 10^(-9); % Falling time during switching
+f_pwm = 10 * 10^3; % Switching frequency 
+R_dson = 5.3 * 10^(-3);
+
+T_junction = 175; % According to data maximum is 130 - added safety margin
+
+% Power dissipation
+Tpcb_max = 100; % Maximum rated temperature of the FR4 circuit board
+Tamb_max = 40; % Maximum ambient temperature of the application
+
+Rth_j_a = 62; % The estimated thermal resistance from juction to ambient
+Rth_j_c = 0.45; % The published thermal resitance from junction to case
+
+% Maximum dissipation power
+Pdiss_max = (Tpcb_max - Tamb_max)/(Rth_j_a - Rth_j_c);
+
+% Tpcb
+Tpcb = T_junction - Pdiss_max * Rth_j_c;
+
+% Power switching
+P_switch = Vs * I_load * (t_rise + t_fall) * 0.5 * f_pwm;
+
+% RDS(on)_max - maximum allowable RDS(on)
+denom = I_load^2 * ( Rth_j_a *(Tpcb + 125) - Rth_j_c * (125 + Tamb_max));
+RDS_on_max = ( 150 * ( Tpcb_max - Tamb_max - P_switch * Rth_j_c))/denom;
+
+% RDS(on) for IRF1405PbF 5,3 mOhm
+
+
+% Total losses
+PMOSFET = I_load^2 * R_dson * (1 + (T_junction - 25)/150)*0.99 + P_switch;
