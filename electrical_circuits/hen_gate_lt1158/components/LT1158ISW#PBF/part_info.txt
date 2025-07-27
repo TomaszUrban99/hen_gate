@@ -1,0 +1,9 @@
+Manufacturer=Analog Devices
+PartNumber=LT1158ISW#PBF
+PartCategory=Integrated Circuit
+PackageCategory=Small Outline Packages
+PinCount=16
+Version=1.1
+Released=2020-10-22 07:31:54
+Downloaded=2025-07-07 10:15:51
+3D=Y
