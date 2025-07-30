@@ -1,0 +1,29 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#SamacSys ECAD Model IFX007TAUMA1
+#/1616113/1440858/2.50/8/4/Integrated Circuit
+DEF IFX007TAUMA1 IC 0 30 Y Y 1 F N
+F0 "IC" 1050 300 50 H V L CNN
+F1 "IFX007TAUMA1" 1050 200 50 H V L CNN
+F2 "PG-TO263-7-1" 1050 100 50 H I L CNN
+F3 "https://www.infineon.com/dgdl/Infineon-IFX007T-DS-v01_00-EN.pdf?fileId=5546d46265f064ff0166433484070b75" 1050 0 50 H I L CNN
+F4 "Gate Drivers" 1050 -100 50 H I L CNN "Description"
+F5 "" 1050 -200 50 H I L CNN "Height"
+F6 "726-IFX007TAUMA1" 1050 -300 50 H I L CNN "Mouser Part Number"
+F7 "https://www.mouser.co.uk/ProductDetail/Infineon-Technologies/IFX007TAUMA1?qs=qSfuJ%252Bfl%2Fd7ZcDPqNlCgmA%3D%3D" 1050 -400 50 H I L CNN "Mouser Price/Stock"
+F8 "Infineon" 1050 -500 50 H I L CNN "Manufacturer_Name"
+F9 "IFX007TAUMA1" 1050 -600 50 H I L CNN "Manufacturer_Part_Number"
+DRAW
+X GND 1 0 0 200 R 50 50 0 0 P
+X IN 2 0 -100 200 R 50 50 0 0 P
+X INH 3 0 -200 200 R 50 50 0 0 P
+X OUT_1 4 0 -300 200 R 50 50 0 0 P
+X SR 5 0 -400 200 R 50 50 0 0 P
+X IS 6 0 -500 200 R 50 50 0 0 P
+X VS 7 0 -600 200 R 50 50 0 0 P
+X OUT_2 8 1200 0 200 L 50 50 0 0 P
+P 5 0 1 6 200 100 1000 100 1000 -700 200 -700 200 100 N
+ENDDRAW
+ENDDEF
+#
+#End Library
