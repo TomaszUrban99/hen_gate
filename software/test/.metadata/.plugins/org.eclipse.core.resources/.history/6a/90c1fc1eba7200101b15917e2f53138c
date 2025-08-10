@@ -1,0 +1,7 @@
+#include "motor.h"
+
+/* MOTOR RUN */
+void motor_run(struct motor *self){
+
+}
+

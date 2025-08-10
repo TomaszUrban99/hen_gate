@@ -1,0 +1,18 @@
+#ifndef BUTTON_CONTROL_H_
+#define BUTTON_CONTROL_H_
+
+#include "stm32f407xx.h"
+
+#include "button_brake.h"
+#include "button_run.h"
+
+struct button_control {
+
+	struct button_brake _brake;
+
+	struct button_brake _run;
+
+};
+
+
+#endif /* BUTTON_CONTROL_H_ */

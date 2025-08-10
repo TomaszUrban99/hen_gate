@@ -1,0 +1,28 @@
+#ifndef TIMER_H_
+#define TIMER_H_
+
+#include <ctype.h>
+
+#include "stm32f407xx.h"
+#include "clock.h"
+
+#define SYSTICK_CORE_CLOCK SystemCoreClock
+
+struct timer {
+
+	uint8_t	_timer_started;
+	uint8_t _waiting_flag;
+};
+
+/*!
+ * \brief Delay function with exception
+ */
+void delay_exception(struct timer *self, uint32_t delay_ms);
+
+/*!
+ * 	\brief Delay function
+ */
+void delay(uint32_t delay_ms);
+
+
+#endif /* TIMER_H_ */

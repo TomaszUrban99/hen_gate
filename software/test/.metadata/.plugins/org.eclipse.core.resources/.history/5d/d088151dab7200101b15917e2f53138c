@@ -1,0 +1,26 @@
+#ifndef BUTTON_H_
+#define BUTTON_H_
+
+#include "stm32f407xx.h"
+
+/* Input type: RUN, BRAKE */
+enum input_type { RUN, BRAKE };
+
+struct button {
+
+	/* Assigned GPIO port */
+	GPIO_TypeDef _gpio;
+
+	uint _pinNo;
+
+	/* Indicates input type RUN or BRAKE */
+	enum input_type _inputType;
+};
+
+/*!
+ * 	\brief Initialise button
+ */
+void init_button (struct button *self);
+
+
+#endif

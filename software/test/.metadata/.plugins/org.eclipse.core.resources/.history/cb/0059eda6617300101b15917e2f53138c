@@ -1,0 +1,8 @@
+#include "timer.h"
+
+void delay(uint32_t delay_ms){
+
+	SysTick->CTRL &= ~SysTick_CTRL_ENABLE_Msk;
+}
+
+

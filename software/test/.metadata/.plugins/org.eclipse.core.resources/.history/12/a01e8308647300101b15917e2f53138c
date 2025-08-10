@@ -1,0 +1,16 @@
+#include "timer.h"
+
+void delay(uint32_t delay_ms){
+
+	/* Disable SysTick */
+	SysTick->CTRL &= ~SysTick_CTRL_ENABLE_Msk;
+
+	/* Configure SysTick */
+	SysTick->CTRL |= SysTick_CTRL_CLKSOURCE_Msk;
+
+	/* Systick start value */
+	SysTick->LOAD = (delay_ms * SYSTICK_CORE_CLOCK) / 1000;
+}
+
+
+

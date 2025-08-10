@@ -1,0 +1,4 @@
+../Src/pwm.c:3:6:pwm_init	1
+../Src/pwm.c:35:6:pwm_set_duty_cycle	1
+../Src/pwm.c:40:6:pwm_enable	1
+../Src/pwm.c:45:6:pwm_disable	1

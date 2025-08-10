@@ -1,0 +1,16 @@
+#ifndef CONTROL_PIN_H
+#define CONTROL_PIN_H
+
+#include "stm32f407xx.h"
+#include "ctype.h"
+
+struct control_pin {
+
+	GPIO_TypeDef *_port;
+	uint8_t _pin;
+
+};
+
+void control_pin_high(struct control_pin *self);
+
+#endif

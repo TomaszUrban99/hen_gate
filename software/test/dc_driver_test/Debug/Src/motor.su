@@ -1,0 +1,4 @@
+../Src/motor.c:4:6:motor_init	16	static
+../Src/motor.c:17:6:motor_ramp_up	24	static
+../Src/motor.c:38:6:motor_ramp_down	24	static
+../Src/motor.c:54:6:motor_run	16	static

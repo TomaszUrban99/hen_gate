@@ -1,0 +1,9 @@
+#ifndef BUTTON_BRAKE_H_
+#define BUTTON_BRAKE_H_
+
+struct button_brake {
+
+};
+
+
+#endif /* BUTTON_BRAKE_H_ */

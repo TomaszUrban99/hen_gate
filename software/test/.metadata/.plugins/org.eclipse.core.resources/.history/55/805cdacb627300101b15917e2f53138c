@@ -1,0 +1,12 @@
+#ifndef TIMER_H_
+#define TIMER_H_
+
+#include "stm32f407xx.h"
+
+/*!
+ * 	\brief Delay function
+ */
+void delay(uint32_t delay_ms);
+
+
+#endif /* TIMER_H_ */

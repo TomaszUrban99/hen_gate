@@ -1,0 +1,12 @@
+#ifndef BUTTON_CONTROL_H_
+#define BUTTON_CONTROL_H_
+
+#include "stm32f407xx.h"
+
+struct button_control {
+
+
+};
+
+
+#endif /* BUTTON_CONTROL_H_ */

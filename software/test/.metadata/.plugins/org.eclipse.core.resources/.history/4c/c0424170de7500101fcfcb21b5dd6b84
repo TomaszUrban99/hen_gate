@@ -1,0 +1,55 @@
+#include "timer.h"
+
+void delay_exception_init(struct timer *self, uint32_t delay_ms){
+
+	/* Waiting flag */
+	self->_waiting_flag = 0;
+
+	/* Set systick source to processor clock (AHB) */
+	SysTick->CTRL |= SysTick_CTRL_CLKSOURCE_Msk;
+
+	/* SysTick exception request enable */
+	SysTick->CTRL |= SysTick_CTRL_TICKINT_Msk;
+
+	/* SysTick start value */
+	SysTick->LOAD = (delay_ms * SYSTICK_CORE_CLOCK) / 1000;
+
+	/* SysTick enable */
+	SysTick->CTRL |= SysTick_CTRL_ENABLE_Msk;
+
+	/* Timer started */
+	self->_timer_started = 1;
+}
+
+void delay_exception_disable(struct timer *self){
+
+	/* Disable SysTick */
+	SysTick->CTRL &= ~SysTick_CTRL_DISABLE_Msk;
+
+	self->_timer_started = 0;
+	self->_waiting_flag = 0;
+}
+
+
+void delay(uint32_t delay_ms){
+
+	/* Disable SysTick */
+	SysTick->CTRL &= ~SysTick_CTRL_ENABLE_Msk;
+
+	/* Configure SysTick */
+	SysTick->CTRL |= SysTick_CTRL_CLKSOURCE_Msk;
+
+	/* Systick start value */
+	SysTick->LOAD = (delay_ms * SYSTICK_CORE_CLOCK) / 1000;
+
+	/* Enable SysTick */
+	SysTick->CTRL |= SysTick_CTRL_ENABLE_Msk;
+
+	while(!(SysTick->CTRL & SysTick_CTRL_COUNTFLAG_Msk)){}
+
+	/* Disable SysTick */
+	SysTick->CTRL &= ~SysTick_CTRL_ENABLE_Msk;
+}
+
+
+

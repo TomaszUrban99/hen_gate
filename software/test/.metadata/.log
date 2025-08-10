@@ -1,0 +1,91 @@
+!SESSION 2025-08-06 11:22:56.989 -----------------------------------------------
+eclipse.buildId=Version 1.16.1
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-08-06 11:25:27.234
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-08-06 11:25:27.235
+!MESSAGE Log4j2 initialized with config file /home/tomasz/Documents/Projekty/Brama/Plytki/hen_gate/software/test/.metadata/.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-08-06 11:25:31.036
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-08-06 11:31:43.429
+!MESSAGE Indexed 'dc_driver' (21 sources, 81 headers) in 3.93 sec: 4,430 declarations; 18,477 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0087%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-08-06 11:32:56.015
+!MESSAGE Indexed 'dc_driver' (21 sources, 81 headers) in 2.31 sec: 4,430 declarations; 18,477 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0087%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-08-06 11:34:26.476
+!MESSAGE Indexed 'dc_driver_test' (2 sources, 53 headers) in 0.353 sec: 1,948 declarations; 2,834 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.042%)
+
+!ENTRY org.eclipse.ltk.core.refactoring 4 10009 2025-08-06 13:24:40.489
+!MESSAGE Participant 'org.eclipse.cdt.ui.headerFileRenameParticipant' removed due to the following exception
+!STACK 1
+C Model Exception: C Model Status [Update conflict.]
+	at org.eclipse.cdt.internal.core.model.CModelOperation.runOperation(CModelOperation.java:637)
+	at org.eclipse.cdt.internal.core.model.WorkingCopy.commit(WorkingCopy.java:81)
+	at org.eclipse.cdt.ui.refactoring.CTextFileChange.commit(CTextFileChange.java:86)
+	at org.eclipse.ltk.core.refactoring.TextChange.perform(TextChange.java:242)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:281)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:281)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.lambda$0(PerformChangeOperation.java:258)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2453)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2478)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:295)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:94)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:219)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2453)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2478)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:89)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+!SUBENTRY 1 org.eclipse.cdt.core 4 981 2025-08-06 13:24:40.538
+!MESSAGE Update conflict.
+
+!ENTRY org.eclipse.ltk.ui.refactoring 4 10000 2025-08-06 13:24:40.557
+!MESSAGE Internal Error
+!STACK 1
+C Model Exception: C Model Status [Update conflict.]
+	at org.eclipse.cdt.internal.core.model.CModelOperation.runOperation(CModelOperation.java:637)
+	at org.eclipse.cdt.internal.core.model.WorkingCopy.commit(WorkingCopy.java:81)
+	at org.eclipse.cdt.ui.refactoring.CTextFileChange.commit(CTextFileChange.java:86)
+	at org.eclipse.ltk.core.refactoring.TextChange.perform(TextChange.java:242)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:281)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:281)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.lambda$0(PerformChangeOperation.java:258)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2453)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2478)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:295)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:94)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:219)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2453)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2478)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:89)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+!SUBENTRY 1 org.eclipse.cdt.core 4 981 2025-08-06 13:24:40.558
+!MESSAGE Update conflict.
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-08-07 09:43:10.758
+!MESSAGE Indexed 'dc_driver_test' (5 sources, 66 headers) in 0.689 sec: 3,370 declarations; 5,430 references; 0 unresolved inclusions; 2 syntax errors; 3 unresolved names (0.034%)
+!SESSION 2025-08-10 13:30:07.574 -----------------------------------------------
+eclipse.buildId=Version 1.16.1
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2025-08-10 13:30:13.004
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-08-10 13:30:16.290
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-08-10 13:30:16.291
+!MESSAGE Log4j2 initialized with config file /home/tomasz/Documents/Projekty/Brama/Plytki/hen_gate/software/test/.metadata/.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-08-10 13:30:22.347
+!MESSAGE Started RMI Server, listening on port 41337

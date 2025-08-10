@@ -1,0 +1,4 @@
+../Src/pwm.c:3:6:pwm_init	16	static
+../Src/pwm.c:35:6:pwm_set_duty_cycle	16	static
+../Src/pwm.c:40:6:pwm_enable	4	static
+../Src/pwm.c:45:6:pwm_disable	4	static

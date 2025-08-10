@@ -1,0 +1,12 @@
+#ifndef PWM_H_
+#define PWM_H_
+
+#include "stm32f407xx.h"
+
+#define TIMER_PSC		80
+
+void pwm_init();
+
+void pwm_disable();
+
+#endif /* PWM_H_ */

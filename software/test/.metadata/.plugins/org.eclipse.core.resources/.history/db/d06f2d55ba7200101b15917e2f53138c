@@ -1,0 +1,9 @@
+#include "motor.h"
+
+/* MOTOR RUN */
+void motor_run(struct motor *self){
+
+	/* Set starting duty cycle */
+	self->_dutyCycle = 0;
+}
+

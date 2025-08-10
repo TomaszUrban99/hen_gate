@@ -1,0 +1,13 @@
+#ifndef BUTTON_H_
+#define BUTTON_H_
+
+#include "stm32f407xx.h"
+
+struct button {
+
+};
+
+void init_button (struct button *self);
+
+
+#endif

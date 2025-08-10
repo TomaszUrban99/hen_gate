@@ -1,0 +1,6 @@
+#include "button.h"
+
+void init_button (struct button *self){
+
+	/* Initialize GPIO */
+}

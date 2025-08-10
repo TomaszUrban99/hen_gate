@@ -1,0 +1,16 @@
+#ifndef BUTTON_BRAKE_H_
+#define BUTTON_BRAKE_H_
+
+#include "stm32f407xx.h"
+
+struct button_brake {
+
+	/* Assigned port */
+	GPIO_TypeDef _gpioPort;
+
+	/* Assigned PIN */
+	uint8_t _pin;
+};
+
+
+#endif /* BUTTON_BRAKE_H_ */

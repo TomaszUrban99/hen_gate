@@ -1,0 +1,20 @@
+#ifndef TIMER_H_
+#define TIMER_H_
+
+#include "stm32f407xx.h"
+#include "clock.h"
+
+#define SYSTICK_CORE_CLOCK SystemCoreClock
+
+/*!
+ * \brief Delay function with exception
+ */
+void delay_exception(uint32_t delay_ms)
+
+/*!
+ * 	\brief Delay function
+ */
+void delay(uint32_t delay_ms);
+
+
+#endif /* TIMER_H_ */

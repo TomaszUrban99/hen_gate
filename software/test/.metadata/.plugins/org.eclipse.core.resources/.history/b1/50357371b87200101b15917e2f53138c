@@ -1,0 +1,12 @@
+#ifndef BUTTON_BRAKE_H_
+#define BUTTON_BRAKE_H_
+
+#include "stm32f407xx.h"
+
+struct button_brake {
+
+	/* Assigned port */
+};
+
+
+#endif /* BUTTON_BRAKE_H_ */

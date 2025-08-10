@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;dc_driver_test/Inc/button_control.h&apos; to &apos;control.h&apos;" description="Rename resource &apos;button_control.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Inc/button_control.h" name="control.h" stamp="1754479169363" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;dc_driver_test/Inc/control.h&apos; to &apos;motor.h&apos;" description="Rename resource &apos;control.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Inc/control.h" name="motor.h" stamp="1754479490493" updateReferences="true"/>
+</session>

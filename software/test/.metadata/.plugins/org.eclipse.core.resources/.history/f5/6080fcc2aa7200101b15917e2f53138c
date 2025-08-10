@@ -1,0 +1,19 @@
+#ifndef BUTTON_H_
+#define BUTTON_H_
+
+#include "stm32f407xx.h"
+
+/* Input type: RUN, BRAKE */
+enum input_type { RUN, BRAKE };
+
+struct button {
+
+};
+
+/*!
+ * 	\brief Initialise button
+ */
+void init_button (struct button *self);
+
+
+#endif

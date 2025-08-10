@@ -1,0 +1,21 @@
+#ifndef PWM_H_
+#define PWM_H_
+
+#include <ctype.h>
+#include "stm32f407xx.h"
+
+#define TIMER_PSC		80
+
+/* Initialize PWM output */
+void pwm_init(uint8_t duty_cycle, uint32_t frequency);
+
+/* PWM - set new duty cycle */
+void pwm_set_duty_cycle(uint8_t duty_cycle);
+
+void pwm_enable(uint32_t frequency);
+
+/* Disable PWM output */
+void pwm_disable();
+
+
+#endif /* PWM_H_ */

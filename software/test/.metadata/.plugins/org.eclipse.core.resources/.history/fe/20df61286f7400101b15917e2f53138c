@@ -1,0 +1,20 @@
+#include "motor.h"
+
+/* MOTOR RUN */
+void motor_ramp_up(struct motor *self){
+
+	/* Set starting duty cycle */
+	pwm_init(self->_dutyCycle = 0, PWM_FREQUENCY_KHZ * 1000);
+
+	/* Calculate ramp slope */
+	int a = MAX_DUTY_CYCLE / RAMP_UP_STEPS_NUMBER;
+
+	/* Begin ramp */
+	for (uint8_t i = 0; i < RAMP_UP_STEPS_NUMBER; ++i ){
+
+		/* Set duty cycle */
+		pwm_set_duty_cycle(self->_dutyCycle += a * i);
+		delay(RAMP_UP_STEP_LENGTH);
+	}
+}
+

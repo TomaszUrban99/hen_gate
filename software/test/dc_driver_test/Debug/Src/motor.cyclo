@@ -1,0 +1,4 @@
+../Src/motor.c:4:6:motor_init	1
+../Src/motor.c:17:6:motor_ramp_up	2
+../Src/motor.c:38:6:motor_ramp_down	2
+../Src/motor.c:54:6:motor_run	1
