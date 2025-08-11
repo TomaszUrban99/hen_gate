@@ -1,0 +1,38 @@
+#include "button_run.h"
+
+void button_run_init(struct button_run *self,  uint8_t priority){
+
+	__disable_irq();
+
+	self->_pushed = BUTTON_RUN_NOTPUSHED;
+
+	/* Configure external interrupts */
+	RCC->APB2ENR |= RCC_APB2ENR_SYSCFGEN;
+
+	/* Configure GPIO pins */
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
+
+	/* Set GPIOA pins mode - input mode (PA0) */
+	GPIOA->MODER &= ~GPIO_MODER_MODE0_Msk;
+
+	GPIOA->PUPDR &= ~GPIO_PUPDR_PUPD0_Msk;
+	GPIOA->PUPDR |= GPIO_PUPDR_PUPD0_1;
+
+	/* Set interrupt line 0 to Port A */
+	SYSCFG->EXTICR[0] &= ~SYSCFG_EXTICR1_EXTI0_Msk;
+
+	/* Unmask interrupt request for PA0 */
+	EXTI->IMR |= EXTI_IMR_MR0;
+
+	/* Set rising edge */
+	EXTI->RTSR |= EXTI_RTSR_TR0;
+
+	NVIC_SetPriority(EXTI0_IRQn, priority);
+
+	/* Enable interrupt in NVIC */
+	NVIC_EnableIRQ(EXTI0_IRQn);
+
+
+	__enable_irq();
+
+}

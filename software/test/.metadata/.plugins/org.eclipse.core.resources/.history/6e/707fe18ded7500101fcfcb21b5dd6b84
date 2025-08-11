@@ -1,0 +1,17 @@
+#include "button_run.h"
+
+void button_run_init(struct button_run *self, GPIO_TypeDef *port, uint8_t pin){
+
+	self->_port = port;
+	self->_pin = pin;
+
+	/* Initialize pins */
+	switch(self->_port){
+
+	case GPIOA:
+		break;
+
+	case GPIOD:
+		break;
+	};
+}

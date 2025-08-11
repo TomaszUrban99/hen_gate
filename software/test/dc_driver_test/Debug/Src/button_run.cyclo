@@ -1,0 +1,3 @@
+/home/tomasz/Documents/Projekty/Brama/Plytki/hen_gate/software/test/dc_driver_test/CMSIS/Include/core_cm4.h:1684:22:__NVIC_EnableIRQ	2
+/home/tomasz/Documents/Projekty/Brama/Plytki/hen_gate/software/test/dc_driver_test/CMSIS/Include/core_cm4.h:1814:22:__NVIC_SetPriority	2
+../Src/button_run.c:3:6:button_run_init	1

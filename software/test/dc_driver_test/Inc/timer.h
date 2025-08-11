@@ -3,10 +3,10 @@
 
 #include <ctype.h>
 
-#include "stm32f407xx.h"
+#include "stm32f4xx.h"
 #include "clock.h"
 
-#define SYSTICK_CORE_CLOCK SystemCoreClock
+#define SYSTICK_CORE_CLOCK (SystemCoreClock)
 
 /*!
  * 	Delay timer structure

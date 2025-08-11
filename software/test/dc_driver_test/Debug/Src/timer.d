@@ -1,4 +1,5 @@
 Src/timer.o: ../Src/timer.c ../Inc/timer.h \
+ /home/tomasz/Documents/Projekty/Brama/Plytki/hen_gate/software/test/dc_driver_test/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
  /home/tomasz/Documents/Projekty/Brama/Plytki/hen_gate/software/test/dc_driver_test/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h \
  /home/tomasz/Documents/Projekty/Brama/Plytki/hen_gate/software/test/dc_driver_test/CMSIS/Include/core_cm4.h \
  /home/tomasz/Documents/Projekty/Brama/Plytki/hen_gate/software/test/dc_driver_test/CMSIS/Include/cmsis_version.h \
@@ -8,6 +9,7 @@ Src/timer.o: ../Src/timer.c ../Inc/timer.h \
  /home/tomasz/Documents/Projekty/Brama/Plytki/hen_gate/software/test/dc_driver_test/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
  ../Inc/clock.h
 ../Inc/timer.h:
+/home/tomasz/Documents/Projekty/Brama/Plytki/hen_gate/software/test/dc_driver_test/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
 /home/tomasz/Documents/Projekty/Brama/Plytki/hen_gate/software/test/dc_driver_test/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h:
 /home/tomasz/Documents/Projekty/Brama/Plytki/hen_gate/software/test/dc_driver_test/CMSIS/Include/core_cm4.h:
 /home/tomasz/Documents/Projekty/Brama/Plytki/hen_gate/software/test/dc_driver_test/CMSIS/Include/cmsis_version.h:

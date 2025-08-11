@@ -1,17 +1,10 @@
-13:40:23 **** Incremental Build of configuration Debug for project dc_driver_test ****
+18:39:32 **** Incremental Build of configuration Debug for project dc_driver_test ****
 make -j8 all 
-arm-none-eabi-gcc "../Src/motor.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"/home/tomasz/Documents/Projekty/Brama/Plytki/hen_gate/software/test/dc_driver_test/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/tomasz/Documents/Projekty/Brama/Plytki/hen_gate/software/test/dc_driver_test/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/motor.d" -MT"Src/motor.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/motor.o"
-arm-none-eabi-gcc -o "dc_driver_test.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/tomasz/Documents/Projekty/Brama/Plytki/hen_gate/software/test/dc_driver_test/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="dc_driver_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: dc_driver_test.elf
- 
 arm-none-eabi-size  dc_driver_test.elf 
-arm-none-eabi-objdump -h -S dc_driver_test.elf  > "dc_driver_test.list"
    text	   data	    bss	    dec	    hex	filename
-    652	      0	   1568	   2220	    8ac	dc_driver_test.elf
+   2756	      4	   1580	   4340	   10f4	dc_driver_test.elf
 Finished building: default.size.stdout
  
-Finished building: dc_driver_test.list
- 
 
-13:40:24 Build Finished. 0 errors, 0 warnings. (took 735ms)
+18:39:33 Build Finished. 0 errors, 0 warnings. (took 577ms)
 

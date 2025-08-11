@@ -1,9 +1,10 @@
 #ifndef MOTOR_H_
 #define MOTOR_H_
 
-#include "stm32f407xx.h"
+#include "stm32f4xx.h"
 #include <ctype.h>
 
+#include "control_pin.h"
 #include "button_brake.h"
 #include "button_run.h"
 #include "timer.h"
@@ -14,9 +15,12 @@
 
 #define PWM_FREQUENCY_KHZ		10
 
-#define MAX_DUTY_CYCLE			90
+#define MAX_DUTY_CYCLE			100
 #define RAMP_UP_STEPS_NUMBER	20
-#define RAMP_UP_STEP_LENGTH_MS	100
+#define RAMP_UP_STEP_LENGTH_MS	200
+
+#define BRAKE_PRIORITY			2
+#define RUN_PRIORITY			3
 
 
 /* Motor direction indicator */
@@ -34,15 +38,16 @@ struct motor {
 	enum motor_direction _motorDirection;
 
 	/* RIGHT DIRECTION */
+	struct control_pin _right_en;
 
 	/* BRAKE button */
-	struct button_brake *_brake;
+	struct button_brake _brake;
 
 	/* RUN button */
-	struct button_run *_run;
+	struct button_run _run;
 
 	/* TIMER */
-	struct timer *_timer;
+	struct timer _timer;
 };
 
 void motor_init(struct motor *self);

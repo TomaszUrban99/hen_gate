@@ -9,6 +9,15 @@ void motor_init(struct motor *self){
 	/* Set duty cycle */
 	self->_dutyCycle = 0;
 
+	/* Initialize input buttons */
+	control_pin_init(&self->_right_en,GPIOD,13);
+
+	/* brake button */
+	button_brake_init(&(self->_brake),BRAKE_PRIORITY);
+
+	/* run button */
+	button_run_init(&(self->_run),RUN_PRIORITY);
+
 	/* Initialize PWM */
 	pwm_init(self->_dutyCycle, PWM_FREQUENCY_KHZ * 1000);
 }
@@ -29,7 +38,7 @@ void motor_ramp_up(struct motor *self){
 	for (uint8_t i = 0; i < RAMP_UP_STEPS_NUMBER; ++i ){
 
 		/* Set duty cycle */
-		pwm_set_duty_cycle(self->_dutyCycle += a * i);
+		pwm_set_duty_cycle(self->_dutyCycle += a);
 		delay(RAMP_UP_STEP_LENGTH_MS);
 	}
 }
@@ -60,7 +69,19 @@ void motor_run(struct motor *self){
 	pwm_disable();
 
 	/* Enable rotation - set output pin to high */
+	control_pin_high(&(self->_right_en));
 
 	/* RAMP UP */
 	motor_ramp_up(self);
+}
+
+void motor_brake(struct motor *self){
+
+	/* Disable PWM signal */
+	pwm_disable();
+
+	/* Stop motor */
+	control_pin_low(&(self->_right_en));
+
+	self->_dutyCycle = 0;
 }

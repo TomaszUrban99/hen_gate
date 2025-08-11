@@ -1,0 +1,31 @@
+#include "button_brake.h"
+
+void button_brake_init(struct button_brake *self){
+
+	__disable_irq();
+
+
+
+	/* Configure external interrupts */
+	RCC->APB2ENR |= RCC_APB2ENR_SYSCFGEN;
+
+	/* Configure GPIO pins */
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
+
+	/* Set GPIOA pins mode - input mode (PA1) */
+	GPIOA->MODER &= ~GPIO_MODER_MODE1_Msk;
+
+	/* Set interrupt line 1 to Port A */
+	SYSCFG->EXTICR[0] &= ~SYSCFG_EXTICR1_EXTI1_Msk;
+
+	/* Unmask interrupt request for PA1 */
+	EXTI->IMR |= EXTI_IMR_MR1;
+
+	/* Set rising edge */
+	EXTI->RTSR |= EXTI_RTSR_TR1;
+
+	/* Enable interrupt in NVIC */
+	NVIC_EnableIRQ(EXTI1_IRQn);
+
+	__enable_irq();
+}

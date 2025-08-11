@@ -1,0 +1,7 @@
+#include "control_pin.h"
+
+void control_pin_init(struct control_pin *self, GPIO_TypeDef *port, uint8_t pin){
+
+	_port = port;
+}
+

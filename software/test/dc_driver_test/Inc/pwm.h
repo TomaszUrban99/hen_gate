@@ -2,9 +2,10 @@
 #define PWM_H_
 
 #include <ctype.h>
-#include "stm32f407xx.h"
+#include "stm32f4xx.h"
 
-#define TIMER_PSC		80
+#define TIMER_PSC		8
+#define TIMER_ARR		99
 
 /* Initialize PWM output */
 void pwm_init(uint8_t duty_cycle, uint32_t frequency);

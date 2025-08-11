@@ -1,16 +1,17 @@
 #ifndef BUTTON_BRAKE_H_
 #define BUTTON_BRAKE_H_
 
-#include "stm32f407xx.h"
+#include "stm32f4xx.h"
+
+#define BUTTON_BRAKE_PUSHED		1
+#define BUTTON_BRAKE_NOTPUSHED	0
 
 struct button_brake {
 
-	/* Assigned port */
-	GPIO_TypeDef _gpioPort;
-
-	/* Assigned PIN */
-	uint8_t _pin;
+	uint8_t _pushed;
 };
+
+void button_brake_init(struct button_brake *self, uint8_t priority);
 
 
 #endif /* BUTTON_BRAKE_H_ */

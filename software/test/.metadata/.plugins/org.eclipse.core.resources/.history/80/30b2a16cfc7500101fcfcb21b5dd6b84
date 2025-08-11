@@ -1,0 +1,15 @@
+/*
+ * clock.h
+ *
+ *  Created on: Aug 7, 2025
+ *      Author: tomasz
+ */
+
+#ifndef CLOCK_H_
+#define CLOCK_H_
+
+#include "stm32f407xx.h"
+
+void clock_init();
+
+#endif /* CLOCK_H_ */

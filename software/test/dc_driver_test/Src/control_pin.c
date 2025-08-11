@@ -1,0 +1,36 @@
+#include "control_pin.h"
+
+void control_pin_init(struct control_pin *self, GPIO_TypeDef *port, uint8_t pin){
+
+	self->_port = port;
+	self->_pin = pin;
+
+	/* Enable clock access */
+	if ( port == GPIOD ){
+		RCC->AHB1ENR |= RCC_AHB1ENR_GPIODEN;
+	}
+
+	/* Reset ODR port */
+	self->_port->ODR &= ~(0x1UL << self->_pin);
+
+	/* Set GPIO as general purpose output */
+	self->_port->MODER &= (0x3UL << 2 * self->_pin);
+	self->_port->MODER |= (0x2UL << 2 * self->_pin);
+}
+
+/*!
+ * \brief Set control pin to high
+ */
+void control_pin_high(struct control_pin *self){
+
+	self->_port->ODR |= (0x1UL << self->_pin);
+}
+
+/*!
+ * \brief Set control pin to low
+ */
+void control_pin_low(struct control_pin *self){
+
+	self->_port->ODR &= ~(0x1UL << self->_pin);
+}
+

@@ -1,0 +1,85 @@
+#ifndef MOTOR_H_
+#define MOTOR_H_
+
+#include "stm32f4xx.h"
+#include <ctype.h>
+
+#include "control_pin.h"
+#include "button_brake.h"
+#include "button_run.h"
+#include "timer.h"
+#include "pwm.h"
+
+#define MOTOR_R_ENABLE_PIN		0
+#define MOTOR_L_ENABLE_PIN		1
+
+#define PWM_FREQUENCY_KHZ		10
+
+#define MAX_DUTY_CYCLE			100
+#define RAMP_UP_STEPS_NUMBER	20
+#define RAMP_UP_STEP_LENGTH_MS	100
+
+
+/* Motor direction indicator */
+enum motor_direction { NONE, RIGHT, LEFT };
+
+/*
+ * PORT NUMBER PWM:	PD 12
+ */
+struct motor {
+
+	/* Set duty cycle 0-100 */
+	uint8_t _dutyCycle;
+
+	/* Motor direction */
+	enum motor_direction _motorDirection;
+
+	/* RIGHT DIRECTION */
+	struct control_pin *_right_en;
+
+	/* BRAKE button */
+	struct button_brake *_brake;
+
+	/* RUN button */
+	struct button_run *_run;
+
+	/* TIMER */
+	struct timer *_timer;
+};
+
+void motor_init(struct motor *self);
+
+/* Enable */
+void motor_enable_right(struct motor *self);
+
+void motor_enable_left(struct motor *self);
+
+/*!
+ * 	\brief Starting ramp
+ */
+void motor_ramp_up(struct motor *self);
+
+/*!
+ * 	\brief Stopping ramp
+ */
+void motor_ramp_down(struct motor *self);
+
+/*!
+ * 	\brief Run motor
+ */
+void motor_run(struct motor *self);
+
+/*!
+ * 	\brief Stop motor slowly
+ */
+void motor_stop(struct motor *self);
+
+/*!
+ * 	\brief Stop motor immediately
+ */
+void motor_brake(struct motor *self);
+
+
+
+
+#endif /* MOTOR_H_ */

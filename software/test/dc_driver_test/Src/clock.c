@@ -14,5 +14,7 @@ void clock_init (void){
 
 	/* Wait until HSE is used as system clock */
 	while(!(RCC->CFGR & RCC_CFGR_SWS_0));
+
+	SystemCoreClockUpdate();
 }
 

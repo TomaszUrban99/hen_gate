@@ -1,0 +1,14 @@
+#ifndef BUTTON_BRAKE_H_
+#define BUTTON_BRAKE_H_
+
+#include "stm32f4xx.h"
+
+struct button_brake {
+
+	uint8_t _pushed;
+};
+
+void button_brake_init(struct button_brake *self);
+
+
+#endif /* BUTTON_BRAKE_H_ */

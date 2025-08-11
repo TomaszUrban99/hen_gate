@@ -1,0 +1,20 @@
+/*
+ * button_run.h
+ *
+ *  Created on: Aug 6, 2025
+ *      Author: tomasz
+ */
+
+#ifndef BUTTON_RUN_H_
+#define BUTTON_RUN_H_
+
+#include "stm32f407xx.h"
+
+struct button_run {
+
+};
+
+void button_run_init(struct button_run *self, GPIO_TypeDef *port, uint8_t pin);
+
+
+#endif /* BUTTON_RUN_H_ */

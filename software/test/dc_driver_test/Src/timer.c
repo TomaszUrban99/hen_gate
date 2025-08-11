@@ -49,6 +49,7 @@ void delay(uint32_t delay_ms){
 
 	/* Disable SysTick */
 	SysTick->CTRL &= ~SysTick_CTRL_ENABLE_Msk;
+
 }
 
 

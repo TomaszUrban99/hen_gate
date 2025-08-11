@@ -1,7 +1,7 @@
 #ifndef CONTROL_PIN_H
 #define CONTROL_PIN_H
 
-#include "stm32f407xx.h"
+#include "stm32f4xx.h"
 #include "ctype.h"
 
 struct control_pin {

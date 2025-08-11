@@ -1,0 +1,3 @@
+/home/tomasz/Documents/Projekty/Brama/Plytki/hen_gate/software/test/dc_driver_test/CMSIS/Include/core_cm4.h:1684:22:__NVIC_EnableIRQ	16	static,ignoring_inline_asm
+/home/tomasz/Documents/Projekty/Brama/Plytki/hen_gate/software/test/dc_driver_test/CMSIS/Include/core_cm4.h:1814:22:__NVIC_SetPriority	16	static
+../Src/button_brake.c:3:6:button_brake_init	16	static,ignoring_inline_asm

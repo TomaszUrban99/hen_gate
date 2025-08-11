@@ -1,0 +1,85 @@
+#include "motor.h"
+
+/* MOTOR INIT */
+void motor_init(struct motor *self){
+
+	/* Motor direction: NONE */
+	self->_motorDirection = NONE;
+
+	/* Set duty cycle */
+	self->_dutyCycle = 0;
+
+	/* Initialize input buttons */
+	control_pin_init(&self->_right_en,GPIOD,13);
+
+	/* brake button */
+	button_brake_init();
+
+	/* run button */
+	button_run_init();
+
+	/* Initialize PWM */
+	pwm_init(self->_dutyCycle, PWM_FREQUENCY_KHZ * 1000);
+}
+
+/* MOTOR RAMP UP */
+void motor_ramp_up(struct motor *self){
+
+	/* Set starting duty cycle */
+	self->_dutyCycle = 0;
+
+	/* Enable PWM output */
+	pwm_enable();
+
+	/* Calculate ramp slope */
+	int a = MAX_DUTY_CYCLE / RAMP_UP_STEPS_NUMBER;
+
+	/* Begin ramp */
+	for (uint8_t i = 0; i < RAMP_UP_STEPS_NUMBER; ++i ){
+
+		/* Set duty cycle */
+		pwm_set_duty_cycle(self->_dutyCycle += a * i);
+		delay(RAMP_UP_STEP_LENGTH_MS);
+	}
+}
+
+/* MOTOR RAMP DOWN */
+void motor_ramp_down(struct motor *self){
+
+	/* Calculate ramp slope */
+	int a = MAX_DUTY_CYCLE / RAMP_UP_STEPS_NUMBER;
+
+	for (uint8_t i = 0; i < RAMP_UP_STEPS_NUMBER; ++i){
+
+		/* Set duty cycle */
+		pwm_set_duty_cycle(self->_dutyCycle -= a * i);
+		delay(RAMP_UP_STEP_LENGTH_MS);
+	}
+
+	pwm_disable();
+}
+
+/* MOTOR RUN */
+void motor_run(struct motor *self){
+
+	/* Run motor */
+	self->_motorDirection = RIGHT;
+
+	/* Ensure PWM is disabled */
+	pwm_disable();
+
+	/* Enable rotation - set output pin to high */
+	control_pin_high(&(self->_right_en));
+
+	/* RAMP UP */
+	motor_ramp_up(self);
+}
+
+void motor_brake(struct motor *self){
+
+	/* Disable PWM signal */
+	pwm_disable();
+
+	/* Stop motor */
+	control_pin_low(self->_right_en);
+}

@@ -1,0 +1,49 @@
+#include "stm32f4xx.h"
+
+#include "motor.h"
+
+/******* STRUCTURES *********/
+struct motor _motor1;
+
+void EXTI0_IRQHandler(void);
+
+void EXTI1_IRQHandler(void);
+
+
+int main(void)
+{
+	clock_init();
+	motor_init(&_motor1);
+
+    /* Loop forever */
+	while(1){
+
+		if (_motor1._run._pushed == BUTTON_RUN_PUSHED){
+
+			/* Run motor */
+			motor_run(&_motor1);
+			_motor1._run._pushed = BUTTON_RUN_NOTPUSHED;
+		}
+	}
+}
+
+
+/* Run interrupt */
+void EXTI0_IRQHandler(void){
+
+	_motor1._run._pushed = BUTTON_BRAKE_PUSHED;
+
+	EXTI->PR |= (1UL << 0);
+}
+
+/* Brake interrupt */
+void EXTI1_IRQHandler(void){
+
+	/* Brake motor immediately */
+	motor_brake(&_motor1);
+
+	/* Run button not pushed */
+	_motor1._run._pushed = BUTTON_RUN_NOTPUSHED;
+
+	EXTI->PR |= (3UL << 0);
+}

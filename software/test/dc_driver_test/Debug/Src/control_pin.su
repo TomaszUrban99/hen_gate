@@ -1,0 +1,3 @@
+../Src/control_pin.c:3:6:control_pin_init	24	static
+../Src/control_pin.c:24:6:control_pin_high	16	static
+../Src/control_pin.c:32:6:control_pin_low	16	static

@@ -8,10 +8,17 @@
 #ifndef BUTTON_RUN_H_
 #define BUTTON_RUN_H_
 
+#include "stm32f4xx.h"
+
+#define BUTTON_RUN_PUSHED		1
+#define BUTTON_RUN_NOTPUSHED	0
+
 struct button_run {
 
-	uint8_t _pin;
+	uint8_t _pushed;
 };
+
+void button_run_init(struct button_run *self, uint8_t priority);
 
 
 #endif /* BUTTON_RUN_H_ */

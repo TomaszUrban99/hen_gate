@@ -17,7 +17,7 @@ void pwm_init(uint8_t duty_cycle, uint32_t frequency){
 
 	/* Timer & PWM parameters */
 	TIM4->PSC = TIMER_PSC - 1;
-	TIM4->ARR = frequency;
+	TIM4->ARR = TIMER_ARR;
 	TIM4->CCR1 = ((TIM4->ARR * duty_cycle) / 100 & 0xFFFF);
 
 	/* PWM mode for channel */
@@ -43,8 +43,12 @@ void pwm_enable(){
 }
 
 void pwm_disable(){
+
 	/* Timer 4 - disable PWM */
 	TIM4->CR1 &= ~TIM_CR1_CEN;
+
+	/* Set PWM duty cycle to 0 */
+	TIM4->CCR1 = 0;
 
 	GPIOD->ODR &= ~GPIO_ODR_OD12;
 }
