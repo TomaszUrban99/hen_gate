@@ -19,7 +19,6 @@ int main(void)
 	while(1){
 
 		if (_motor1._run._pushed == BUTTON_RUN_PUSHED){
-
 			/* Run motor */
 			motor_run(&_motor1);
 			_motor1._run._pushed = BUTTON_RUN_NOTPUSHED;
@@ -52,4 +51,5 @@ void EXTI1_IRQHandler(void){
 
 	/* Clear all pending requests */
 	EXTI->PR |= EXTI_PR_PR1;
+	EXTI->PR |= EXTI_PR_PR0;
 }

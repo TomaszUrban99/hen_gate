@@ -49,6 +49,4 @@ void pwm_disable(){
 
 	/* Set PWM duty cycle to 0 */
 	TIM4->CCR1 = 0;
-
-	GPIOD->ODR &= ~GPIO_ODR_OD12;
 }

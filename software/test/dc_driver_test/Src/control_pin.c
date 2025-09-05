@@ -15,7 +15,7 @@ void control_pin_init(struct control_pin *self, GPIO_TypeDef *port, uint8_t pin)
 
 	/* Set GPIO as general purpose output */
 	self->_port->MODER &= (0x3UL << 2 * self->_pin);
-	self->_port->MODER |= (0x2UL << 2 * self->_pin);
+	self->_port->MODER |= (0x1UL << 2 * self->_pin);
 }
 
 /*!

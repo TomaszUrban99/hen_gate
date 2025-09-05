@@ -77,11 +77,11 @@ void motor_run(struct motor *self){
 
 void motor_brake(struct motor *self){
 
-	/* Disable PWM signal */
-	pwm_disable();
-
 	/* Stop motor */
 	control_pin_low(&(self->_right_en));
+
+	/* Disable PWM signal */
+	pwm_disable();
 
 	self->_dutyCycle = 0;
 }
